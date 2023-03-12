@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="flex box-container margin-top-25">
+        <p class = "bold">Your Gold: </p>
+        <p class="gold-tracker"> {{session['gold']}}</p>
+        <a href="/clear"><button class="submit-button">Reset</button></a>
+    </div>
+    <div class="flex box-container margin-top-25">
+        <div class="box">
+            <p class="box-text bold">Farm</p>
+            <p class="box-text margin-top-10">(earns 10-20 gold)</p>
+            <form action="/process_money" method="post">
+                <div class="flex jc-center margin-top-25">
+                    <input type="hidden" name="building" value="farm">
+                    <input type="submit" value="Find Gold!" class="box-text submit-button bold"></div>
+            </form>
+        </div>
+        <div class="box">
+            <p class="box-text bold">Cave</p>
+            <p class="box-text margin-top-10">(earns 5-10 gold)</p>
+            <form action="/process_money" method="post">
+                <div class="flex jc-center margin-top-25">
+                    <input type="hidden" name="building" value="cave">
+                    <input type="submit" value="Find Gold!" class="box-text submit-button bold"></div>
+            </form>
+        </div>
+        <div class="box">
+            <p class="box-text bold">House</p>
+            <p class="box-text margin-top-10">(earns 2-5 gold)</p>
+            <form action="/process_money" method="post">
+                <div class="flex jc-center margin-top-25">
+                    <input type="hidden" name="building" value="house">
+                    <input type="submit" value="Find Gold!" class="box-text submit-button bold"></div>
+            </form>
+        </div>
+        <div class="box">
+            <p class="box-text bold">Casino</p>
+            <p class="box-text margin-top-10">(earns/takes 0-50 gold)</p>
+            <form action="/process_money" method="post">
+                <div class="flex jc-center margin-top-25">
+                    <input type="hidden" name="building" value="casino">
+                    <input type="submit" value="Find Gold!" class="box-text submit-button bold"></div>
+            </form>
+        </div>
+    </div>
+    <div class="box-container">
+        <p class="margin-top-25 bold">Activities:</p>
+        <div class="activities-output margin-top-10" id="activities">{{ session['activitylog']|safe }}</div>
+    </div>
+    <!--<script type="text/javascript" src="{{ url_for('static', filename='/script.js') }}"></script>-->
+</body>
+</html>

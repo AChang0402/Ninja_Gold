@@ -1,0 +1,74 @@
+* {
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    font-family:"calibri"
+}
+
+.flex {
+    display:flex;
+}
+
+.box-container {
+    width: 1200px;
+    margin: 0 auto;
+    gap: 25px;
+    align-items: center;
+}
+
+.gold-tracker{
+    width: 100px;
+    border: solid black 2px;
+    text-align: center;
+    padding: 3px 0px;
+}
+
+.box {
+    flex: 1;
+    border: solid 3px black;
+    padding: 25px;
+    height: 120px;
+}
+
+.box-text{
+    text-align:center;
+}
+
+.jc-center {
+    justify-content:center
+}
+
+.submit-button {
+    padding: 2px 5px;
+    box-shadow: 3px 3px black;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-top-25 {
+    margin-top: 25px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.activities-output{
+    width:1150px;
+    height: 300px;
+    border: 3px solid black;
+    padding: 15px 25px 25px 25px;
+    overflow-y:auto;
+}
+
+.green{
+    color: forestgreen;
+}
+
+.red{
+    color:firebrick;
+}
